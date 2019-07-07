@@ -7,11 +7,12 @@ const styles = StyleSheet.create({
     height: 54 + getStatusBarHeight(),
     paddingTop: getStatusBarHeight(),
     borderBottomWidth: 1,
-    borderBottomColor: colors.light,
+    borderBottomColor: colors.soluSecondary,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: metrics.basePadding
+    paddingHorizontal: metrics.basePadding,
+    backgroundColor: colors.soluSecondary
   },
 
   headerCenter: {
@@ -23,17 +24,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    color: colors.darker
+    color: colors.white
   },
 
   user: {
     marginTop: metrics.baseMargin / 2,
     fontSize: 10,
-    color: colors.dark
+    color: colors.white
   },
 
   icon: {
-    color: colors.darker
+    color: colors.white
   }
 });
 

@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
-import createNavigator from './routes';
+import React, { Component } from "react";
+import AsyncStorage from "@react-native-community/async-storage";
+import createNavigator from "./routes";
 
 export default class App extends Component {
   state = {
     userChecked: false,
-    userLogged: false,
+    userLogged: false
   };
 
   async componentDidMount() {
-    const usuario = await AsyncStorage.getItem('@Login:usuario');
+    const usuario = await AsyncStorage.getItem("@Login:usuario");
 
     this.setState({
       userChecked: true,
-      userLogged: !!usuario,
+      userLogged: !!usuario
     });
   }
 

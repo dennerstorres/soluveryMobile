@@ -11,10 +11,10 @@ import {
 import PropTypes from "prop-types";
 
 import AsyncStorage from "@react-native-community/async-storage";
-import api from "˜/services/api";
+import api from "../../services/api";
 
 import styles from "./styles";
-import logo from "˜/assets/logo.png";
+import logo from "../../assets/logo.png";
 
 export default class Login extends Component {
   static propTypes = {
@@ -48,13 +48,22 @@ export default class Login extends Component {
     const { usuario, senha } = this.state;
     const { navigation } = this.props;
 
+    var valor = 0;
+    var cont = 1;
+    for (cont = 1; cont <= senha.length; cont++) {
+      valor = valor + senha.charCodeAt(cont - 1) * cont;
+    }
+    var GeraSenha = valor.toString();
+
+    //this.setState({ senha: GeraSenha });
+
     this.setState({ loading: true });
     try {
-      const user = await this.checkUserExists(usuario, senha);
+      const user = await this.checkUserExists(usuario, GeraSenha);
       this.setState({ status: user.data.status });
 
       if (user.data.status === "C") {
-        await this.saveUser(usuario, senha);
+        await this.saveUser(usuario, GeraSenha);
         navigation.navigate("Entrega");
       } else if (user.data.status === "E") {
         this.setState({ loading: false });
@@ -86,7 +95,7 @@ export default class Login extends Component {
           style={styles.input}
           placeholder="Usuário"
           placeholderTextColor="#999"
-          autoCapitalize="none"
+          autoCapitalize="characters"
           autoCorrect={false}
           underlineColorAndroid="transparent"
           value={usuario}
@@ -97,10 +106,11 @@ export default class Login extends Component {
           style={styles.input}
           placeholder="Senha"
           placeholderTextColor="#999"
-          autoCapitalize="none"
+          autoCapitalize="characters"
           autoCorrect={false}
           underlineColorAndroid="transparent"
           value={senha}
+          textContentType="newPassword"
           onChangeText={text => this.setState({ senha: text })}
         />
 

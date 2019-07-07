@@ -25,11 +25,24 @@ class Header extends Component {
     navigation.navigate("Login");
   };
 
+  drawerMenu = () => {
+    const { navigation } = this.props;
+
+    navigation.navigate("AppDrawerNavigator");
+  };
+
   render() {
-    const { title, usuario } = this.props;
+    const { title, usuario, navigation } = this.props;
     return (
       <View style={styles.container}>
-        <View style={styles.left} />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.openDrawer();
+          }}
+        >
+          <Icon name="bars" size={16} style={styles.icon} />
+        </TouchableOpacity>
+        {/*<View style={styles.left} />*/}
         <View style={styles.headerCenter}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.user}>{usuario}</Text>

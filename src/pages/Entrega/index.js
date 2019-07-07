@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import AsyncStorage from "@react-native-community/async-storage";
 
-import api from "˜/services/api";
+import api from "../../services/api";
 
-import { View, Text, ActivityIndicator, FlatList } from "react-native";
-import Header from "˜/Components/Header";
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  FlatList,
+  StatusBar
+} from "react-native";
+import Header from "../../components/Header";
 
 import styles from "./styles";
 
@@ -61,6 +67,7 @@ export default class Entrega extends Component {
 
     return (
       <View style={styles.container}>
+        <StatusBar barStyle="light-content" />
         <Header title="Entregas" usuario={this.state.user} />
         {loading ? (
           <ActivityIndicator style={styles.loading} />

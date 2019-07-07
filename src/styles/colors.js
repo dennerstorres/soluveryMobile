@@ -6,6 +6,10 @@ export default {
   dark: "#666",
   darker: "#333",
   black: "#000",
+  soluPrimary: "#3f51b5",
+  soluSecondary: "#303f9f",
+  soluBackground: "#fafafa",
+  soluFront: "#338637",
 
   primary: "#274FA5",
   secundary: "#444A5A",
