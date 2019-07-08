@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white
   },
   logo: {
-    width: 200,
-    height: 200,
+    width: 100,
+    height: 100,
     alignSelf: "center",
     marginBottom: metrics.baseMargin * 2
   },
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginTop: metrics.baseMargin
   },
   input: {
-    height: 48,
+    height: 42,
     borderWidth: 1,
     borderColor: colors.light,
     borderRadius: metrics.baseRadius,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     marginTop: metrics.baseMargin
   },
   button: {
-    height: 48,
+    height: 42,
     borderRadius: metrics.baseRadius,
     paddingHorizontal: metrics.basePadding,
     marginTop: metrics.baseMargin,
@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
     color: colors.white
+  },
+  gamb: {
+    height: 130
   }
 });
 

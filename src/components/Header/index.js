@@ -40,7 +40,7 @@ class Header extends Component {
             navigation.openDrawer();
           }}
         >
-          <Icon name="bars" size={16} style={styles.icon} />
+          <Icon name="bars" size={18} style={styles.icon} />
         </TouchableOpacity>
         {/*<View style={styles.left} />*/}
         <View style={styles.headerCenter}>
@@ -48,7 +48,7 @@ class Header extends Component {
           <Text style={styles.user}>{usuario}</Text>
         </View>
         <TouchableOpacity onPress={this.signOut}>
-          <Icon name="sign-out" size={16} style={styles.icon} />
+          <Icon name="sign-out" size={18} style={styles.icon} />
         </TouchableOpacity>
       </View>
     );

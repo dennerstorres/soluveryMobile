@@ -120,9 +120,10 @@ export default class Login extends Component {
           {loading ? (
             <ActivityIndicator size="small" color="#FFF" />
           ) : (
-            <Text style={styles.buttonText}>Entrar</Text>
+            <Text style={styles.buttonText}>Entrar!</Text>
           )}
         </TouchableOpacity>
+        <View style={styles.gamb} />
       </View>
     );
   }
