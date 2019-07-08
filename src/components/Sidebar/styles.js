@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { colors, metrics } from "˜/styles";
 import { getStatusBarHeight } from "react-native-status-bar-height";
-import { bold } from "ansi-colors";
+import { Platform } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    paddingTop: 30,
+    paddingTop: Platform.OS === "ios" ? 30 : 10,
     paddingLeft: 10,
     height: 150,
     backgroundColor: colors.soluFront
@@ -19,9 +19,13 @@ const styles = StyleSheet.create({
 
   title: {
     paddingTop: 10,
-    fontWeight: "bold",
     fontSize: 14,
     color: colors.white
+  },
+
+  subTitle: {
+    fontSize: 16,
+    color: colors.light
   },
 
   borderLogo: {
@@ -45,8 +49,9 @@ const styles = StyleSheet.create({
   },
 
   textButton: {
-    paddingLeft: 10,
-    fontSize: 18
+    paddingTop: 5,
+    paddingLeft: 15,
+    fontSize: 14
   },
 
   icon: {

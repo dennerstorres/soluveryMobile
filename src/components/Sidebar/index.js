@@ -14,6 +14,18 @@ export default class Sidebar extends Component {
 
     navigation.navigate("Login");
   };
+
+  conf = async () => {
+    const { navigation } = this.props;
+
+    navigation.navigate("Configurações");
+  };
+
+  testCon = async () => {
+    const { navigation } = this.props;
+
+    navigation.navigate("Conexão");
+  };
   render() {
     return (
       <View style={style.container}>
@@ -23,12 +35,13 @@ export default class Sidebar extends Component {
             <Image style={style.logo} source={logo} />
           </View>
           <Text style={style.title}>Solução Sistemas</Text>
+          <Text style={style.subTitle}>SoluDelivery</Text>
         </View>
-        <TouchableOpacity style={style.button}>
+        <TouchableOpacity onPress={this.conf} style={style.button}>
           <Icon name="wrench" size={26} style={style.icon} />
           <Text style={style.textButton}>Configurações</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={style.button}>
+        <TouchableOpacity onPress={this.testCon} style={style.button}>
           <Icon name="refresh" size={26} style={style.icon} />
           <Text style={style.textButton}>Testar Conexão</Text>
         </TouchableOpacity>

@@ -48,10 +48,11 @@ export default class Login extends Component {
     const { usuario, senha } = this.state;
     const { navigation } = this.props;
 
+    var Senha = senha.toUpperCase();
     var valor = 0;
     var cont = 1;
-    for (cont = 1; cont <= senha.length; cont++) {
-      valor = valor + senha.charCodeAt(cont - 1) * cont;
+    for (cont = 1; cont <= Senha.length; cont++) {
+      valor = valor + Senha.charCodeAt(cont - 1) * cont;
     }
     var GeraSenha = valor.toString();
 
@@ -64,7 +65,7 @@ export default class Login extends Component {
 
       if (user.data.status === "C") {
         await this.saveUser(usuario, GeraSenha);
-        navigation.navigate("Entrega");
+        navigation.navigate("Entregas");
       } else if (user.data.status === "E") {
         this.setState({ loading: false });
         console.log("Senha Errada");
@@ -109,8 +110,9 @@ export default class Login extends Component {
           autoCapitalize="characters"
           autoCorrect={false}
           underlineColorAndroid="transparent"
+          secureTextEntry={true}
+          //textContentType={"password"}
           value={senha}
-          textContentType="newPassword"
           onChangeText={text => this.setState({ senha: text })}
         />
 
